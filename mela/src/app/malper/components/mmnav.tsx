@@ -13,14 +13,12 @@ import { useTheme } from 'next-themes';
 
 const NAV_LINKS = [
   { href: '/malper', label: 'Ana Sayfa' },
-  { href: '/malper/yek', label: 'Tümü' },
-  { href: '/malper/car', label: 'Gündem' },
-  { href: '/malper/se', label: 'Dünya' },
-  { href: '/malper/dirok', label: 'Ekonomi' },
-  { href: '/malper/xane', label: 'Ekoloji' },
-  { href: '/malper/rojname', label: 'Kadın' },
-  { href: '/malper/mmmmm', label: 'Yazarlar' },
-  { href: '/malper/account', label: 'Forum' },
+  { href: '/malper#work', label: 'İşler' },
+  { href: '/malper#services', label: 'Hizmetler' },
+  { href: '/malper#culture', label: 'Kültür' },
+  { href: '/malper#news', label: 'Haberler' },
+  { href: '/malper#careers', label: 'Kariyer' },
+  { href: '/malper#contact', label: 'İletişim' },
 ];
 
 
@@ -36,19 +34,34 @@ function Mmmnavbar() {
 
   return (
     <>
-      <header className="relative z-50 w-full bg-white dark:bg-zinc-950 text-[#18181b] dark:text-zinc-100 border-b border-zinc-200 dark:border-zinc-800 transition-colors duration-300">
+      <header className="sticky top-0 z-50 w-full bg-white/90 text-[#18181b] dark:bg-zinc-950/90 dark:text-zinc-100 backdrop-blur-md border-b border-zinc-200 dark:border-zinc-800 transition-colors duration-300">
 
-        {/* BBC Style Top Header Bar */}
-        <div className="bg-white dark:bg-zinc-900 transition-colors duration-300">
-          <div className="mx-auto flex min-h-[58px] max-w-[1600px] items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
+        <div className="transition-colors duration-300">
+          <div className="mx-auto flex min-h-[64px] max-w-[1600px] items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
 
             <div className="flex min-w-[60px] items-center justify-start">
-              <Link href="/malper" className="text-xl font-black tracking-tighter text-[#b5121b]">
-                YENİ YAŞAM
+              <Link href="/malper" className="text-lg font-black uppercase tracking-tight text-zinc-900 dark:text-zinc-50">
+                MK <span className="text-[#ff4d00]">Creative</span>
               </Link>
             </div>
 
             <div className="flex items-center gap-2 sm:gap-3">
+
+              {/* MASAÜSTÜ MENÜ */}
+              <nav className="hidden xl:block">
+                <ul className="m-0 flex list-none items-center gap-5 p-0">
+                  {NAV_LINKS.map((link) => (
+                    <li key={link.href}>
+                      <Link
+                        href={link.href}
+                        className="text-xs font-bold uppercase tracking-[0.14em] text-zinc-600 dark:text-zinc-400 no-underline transition-colors hover:text-[#ff4d00] dark:hover:text-[#ff4d00]"
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
 
               {mounted && (
                 <button
@@ -73,37 +86,11 @@ function Mmmnavbar() {
                 </button>
               )}
 
-              <span className="hidden text-xs font-medium capitalize text-zinc-500 dark:text-zinc-400 md:inline-block">
-                {new Date().toLocaleDateString('tr-TR', {
-                  weekday: 'long',
-                  year: 'numeric',
-                  month: 'long',
-                  day: 'numeric'
-                })}
-              </span>
-
               <a
-                href="/login"
-                className="flex h-9 items-center gap-2 rounded-md border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 px-3 text-xs font-bold text-zinc-700 dark:text-zinc-300 no-underline transition-all hover:bg-zinc-100 dark:hover:bg-zinc-700 hover:text-[#111] dark:hover:text-white"
+                href="/#contact"
+                className="hidden h-9 items-center rounded-full bg-[#ff4d00] px-5 text-xs font-black uppercase tracking-[0.14em] text-white no-underline transition-all hover:bg-zinc-900 sm:flex dark:hover:bg-white dark:hover:text-zinc-900"
               >
-                <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                </svg>
-                <span className="hidden sm:inline">Giriş Yap</span>
-              </a>
-
-              <a
-                href="/signup"
-                className="flex h-9 items-center rounded-md border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 px-3.5 text-xs font-bold text-zinc-700 dark:text-zinc-300 no-underline transition-all hover:bg-zinc-100 dark:hover:bg-zinc-700 hover:text-[#111] dark:hover:text-white"
-              >
-                Üye Ol
-              </a>
-
-              <a
-                href="/subscribe"
-                className="flex h-9 items-center rounded-md bg-[#b5121b] px-4 text-xs font-black text-white no-underline shadow-lg shadow-red-900/20 transition-all hover:bg-[#d51d29] hover:text-white"
-              >
-                ABONE OL
+                Bize Ulaşın
               </a>
 
               {/* HAMBURGER — mobilde üç çizgi */}
@@ -124,7 +111,7 @@ function Mmmnavbar() {
           </div>
         </div>
 
-        {/* ANA MENÜ — açılıp kapanabilir */}
+        {/* MOBİL MENÜ */}
         <div className={`mm-menu-wrap ${open ? 'mm-menu-open' : ''} bg-white dark:bg-zinc-900 border-t border-zinc-100 dark:border-zinc-800 transition-colors duration-300`} id="mm-main-menu">
           <nav className="mx-auto w-full max-w-[1600px] px-0 lg:px-8">
             <ul className="m-0 flex w-full list-none flex-col p-0 lg:flex-row lg:items-center lg:flex-wrap">
@@ -133,7 +120,7 @@ function Mmmnavbar() {
                   <Link
                     href={link.href}
                     onClick={() => setOpen(false)}
-                    className={`nav-modern-link flex w-full items-center text-zinc-700 dark:text-zinc-300 hover:bg-zinc-50 dark:hover:bg-zinc-800 lg:hover:bg-transparent dark:lg:hover:bg-transparent transition-colors ${link.href === '/malper' ? 'active text-[#b5121b] dark:text-[#b5121b]' : ''}`}
+                    className={`nav-modern-link flex w-full items-center text-zinc-700 dark:text-zinc-300 hover:bg-zinc-50 dark:hover:bg-zinc-800 lg:hover:bg-transparent dark:lg:hover:bg-transparent transition-colors ${link.href === '/malper' ? 'active text-[#ff4d00] dark:text-[#ff4d00]' : ''}`}
                   >
                     {link.label}
                   </Link>
