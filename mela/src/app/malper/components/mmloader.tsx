@@ -48,7 +48,7 @@ export function NewsLoader() {
         <span className="mm-dot" />
         <span className="mm-dot" style={{ animationDelay: "0.15s" }} />
         <span className="mm-dot" style={{ animationDelay: "0.3s" }} />
-        <span className="mm-loader-text">Haberler yükleniyor…</span>
+        <span className="mm-loader-text">İçerik yükleniyor…</span>
       </div>
     </div>
   );
