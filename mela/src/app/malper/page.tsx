@@ -61,7 +61,7 @@ export default function AgencyPage() {
         <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/60 to-zinc-950/20" />
         <div className="relative mx-auto w-full max-w-[1600px] px-4 py-24 sm:px-6 lg:px-8">
           <p className="mb-6 text-xs font-black uppercase tracking-[0.3em] text-[#ff4d00]">
-            Creative Agency — İstanbul
+            Productive Agency — RED Yapım
           </p>
           <h1 className="max-w-5xl text-5xl font-black uppercase leading-[0.95] tracking-tight sm:text-7xl lg:text-8xl">
             Fikirleri
@@ -256,10 +256,10 @@ export default function AgencyPage() {
             seninle başlasın
           </h2>
           <a
-            href="mailto:hello@mkcreative.agency"
+            href="mailto:hello@redyapim.com"
             className="mt-12 inline-block rounded-full border border-white/40 px-10 py-5 text-xs font-black uppercase tracking-[0.16em] no-underline transition-all hover:bg-[#ff4d00] hover:border-[#ff4d00]"
           >
-            hello@mkcreative.agency
+            hello@redyapim.com
           </a>
         </div>
       </section>

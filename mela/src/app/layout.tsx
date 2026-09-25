@@ -36,11 +36,11 @@ const geistMono = localFont({
 // Allahu Ekber, Allahu Ekber, Allahu Ekber, La ilahe illAllah
 export const metadata: Metadata = {
   title: {
-    template: "%s | Yeni Yaşam ",
-    default: " Yeni Yaşam Gazetesi",
+    template: "%s | Red Yapım ",
+    default: " Red Yapım",
   },
-  description: "ni Yaşam Gazetesi Yeni Yaşam Gazetesi | Yeni Yaşam  · Anasayfa · Gündem · Güncel ",
-  keywords: [" Yaşam · Söyleşi · Forum · Politika · Günün Manşeti."],
+  description: "Red Yapım · Productive Agency · İşler · Hizmetler · Kültür ",
+  keywords: ["Red Yapım · Productive Agency · Strateji · Tasarım · Prodüksiyon · Medya"],
 };
 
 export default function RootLayout({
