@@ -1,5 +1,5 @@
-// Bismillahirrahmanirrahim
-// Elhamdulillahirabbulalemin
+// BismillahirRahmanirRahim
+// El Hamdu Lillahi Rabbul Alemin
 // Esselatu vesselamu ala rasulillah
 // Allahumme salli ala seyyidina Muhammedin
 // Allah u Ekber, Allahu Ekber, Allahu Ekber
@@ -32,8 +32,6 @@ const geistMono = localFont({
   src: "./fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
 });
-// Suphan Allah, Elhamdulillah, La ilahe illAllah
-// Allahu Ekber, Allahu Ekber, Allahu Ekber, La ilahe illAllah
 export const metadata: Metadata = {
   title: {
     template: "%s | Red Yapım ",

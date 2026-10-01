@@ -1,3 +1,8 @@
+// BismillahirRahmanirRahim
+// El Hamdu Lillahi Rabbul Alemin
+// Esselatu vesselamu ala rasulina Muhammedin .
+// La ilahe ill Allah Muhammeden Rasulullah
+
 // Bismillahirahmanirrahim
 // ABC News tarzı Canlı TV — büyük oynatıcı + altında seçilebilir yayın listesi
 "use client";

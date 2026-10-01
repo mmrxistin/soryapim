@@ -1,3 +1,8 @@
+// BismillahirRahmanirRahim
+// El Hamdu Lillahi Rabbul Alemin
+// Esselatu vesselamu ala rasulina Muhammedin .
+// La ilahe ill Allah Muhammeden Rasulullah
+
 import { Bookmark, Home, Mail, Settings2, Users } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 

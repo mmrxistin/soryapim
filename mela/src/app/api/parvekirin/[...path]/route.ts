@@ -1,3 +1,8 @@
+// BismillahirRahmanirRahim
+// El Hamdu Lillahi Rabbul Alemin
+// Esselatu vesselamu ala rasulina Muhammedin .
+// La ilahe ill Allah Muhammeden Rasulullah
+
 import { GET as getYek } from "@/app/api/parvekirin/yek/route";
 import { GET as searchYek } from "@/app/api/parvekirin/yek/search/route";
 import { GET as getYekayeke } from "@/app/api/parvekirin/yek/yek/route";

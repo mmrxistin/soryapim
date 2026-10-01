@@ -1,3 +1,8 @@
+// BismillahirRahmanirRahim
+// El Hamdu Lillahi Rabbul Alemin
+// Esselatu vesselamu ala rasulina Muhammedin .
+// La ilahe ill Allah Muhammeden Rasulullah
+
 // Bismillahirahmanirrahim
 // Modern manşet slider'ı — otomatik dönen, ok/dot kontrollü, tam responsive
 "use client";

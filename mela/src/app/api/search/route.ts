@@ -1,3 +1,8 @@
+// BismillahirRahmanirRahim
+// El Hamdu Lillahi Rabbul Alemin
+// Esselatu vesselamu ala rasulina Muhammedin .
+// La ilahe ill Allah Muhammeden Rasulullah
+
 import { validateRequest } from "@/auth";
 import prisma from "@/lib/prisma";
 import { getContentInclude } from "@/lib/types";

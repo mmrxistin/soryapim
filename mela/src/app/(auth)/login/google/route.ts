@@ -1,3 +1,8 @@
+// BismillahirRahmanirRahim
+// El Hamdu Lillahi Rabbul Alemin
+// Esselatu vesselamu ala rasulina Muhammedin .
+// La ilahe ill Allah Muhammeden Rasulullah
+
 import { google } from "@/auth";
 import { generateCodeVerifier, generateState } from "arctic";
 import { cookies } from "next/headers";
