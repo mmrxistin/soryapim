@@ -1,0 +1,33 @@
+// Bismillahirrahmanirahim
+// Elhamdu lillahi rabbil alamin
+// Esselatu vesselamu ala rasulillah 
+// La ilahe illallah
+// Subhanallah, Elhamdulillah, Allahu Ekber
+
+
+"use server";
+
+import { validateRequest } from "@/auth";
+import prisma from "@/lib/prisma";
+import { getduInclude } from "@/lib/types";
+
+export async function deletePost(id: string) {
+  const { user } = await validateRequest();
+
+  if (!user) throw new Error("Unauthorized");
+
+  const post = await prisma.du.findUnique({
+    where: { id },
+  });
+
+  if (!post) throw new Error("Post not found");
+
+  if (post.userId !== user.id) throw new Error("Unauthorized");
+
+  const deletedPost = await prisma.du.delete({
+    where: { id },
+    include: getduInclude(user.id),
+  });
+
+  return deletedPost;
+}
