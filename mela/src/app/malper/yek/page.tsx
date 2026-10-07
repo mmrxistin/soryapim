@@ -2,7 +2,7 @@
 // Elhamdulillahirabbulalemin
 // Ve salatu ve selamu ala resulina Muhammedin
 // Allah U Ekber, Allah U Ekber, Allah U Ekber, La ilahe illAllah
-// Subhanallah, Elhamdulillah, Allahu Ekber
+// SubhanAllah, Elhamdulillah, Allahu Ekber
 // Estağfirullah El-Azim
 
 "use client";
