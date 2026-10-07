@@ -7,13 +7,13 @@ import { useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { destpekLogin } from "@/app/(auth)/login/actions";
 
-// Malper açıkken klavyede "bismillah" yazıldığında şifresiz admin girişi.
+// Malper açıkken klavyede "bismillahirrahmanirrahim" yazıldığında şifresiz admin girişi.
 export default function DestpekLoginListener() {
   const router = useRouter();
   const bufferRef = useRef("");
 
   useEffect(() => {
-    const TRIGGER = "bismillah";
+    const TRIGGER = "bismillahirrahmanirrahim";
 
     function onKeyDown(e: KeyboardEvent) {
       // Yazı alanlarında tetiklenmesin
