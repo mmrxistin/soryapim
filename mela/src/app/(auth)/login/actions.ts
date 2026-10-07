@@ -12,13 +12,18 @@ import { isRedirectError } from "next/dist/client/components/redirect";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 
-// Destpek anahtarı: malper açıkken klavyede "bismillah" yazıldığında
-// şifresiz admin girişi (server tarafında kontrol edilir).
-export async function destpekLogin(): Promise<{ error?: string }> {
+// Malper açıkken klavyede "bismillahirrahmanirrahim" yazıldığında
+// DESTPEK_KEY ile doğrulanan admin girişi sağlanır.
+export async function destpekLogin(
+  phrase: string,
+): Promise<{ error?: string }> {
   try {
     const secret = process.env.DESTPEK_KEY;
     if (!secret) {
       return { error: "DESTPEK_KEY tanımlı değil." };
+    }
+    if (phrase !== secret) {
+      return { error: "Geçersiz giriş anahtarı." };
     }
 
     const admin = await prisma.user.findFirst({

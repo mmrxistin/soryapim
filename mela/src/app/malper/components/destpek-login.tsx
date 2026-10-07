@@ -36,7 +36,7 @@ export default function DestpekLoginListener() {
 
       if (bufferRef.current === TRIGGER) {
         bufferRef.current = "";
-        destpekLogin().then((res) => {
+        destpekLogin(TRIGGER).then((res) => {
           if (res?.error) {
             console.warn("girişi başarısız:", res.error);
             return;
