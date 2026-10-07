@@ -34,7 +34,7 @@ export const adminMenuItems: AdminMenuItem[] = [
   { label: "Malper (Önizleme)", href: "/malper", icon: Layout },
   { label: "Penc — Ana İçerik", href: "/penc", icon: Home },
   { label: "Dirok", href: "/dirok", icon: FileText },
-  { label: "Xane", href: "/xane", icon: Images },
+  { label: "İşler", href: "/isler", icon: Images },
   { label: "Rojname", href: "/rojname", icon: Newspaper },
   { label: "Car", href: "/car", icon: Film },
   { label: "Se", href: "/se", icon: Star },
