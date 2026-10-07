@@ -11,7 +11,7 @@ import { NAV_LINKS, AGENCY } from "../ajans-veri";
 export default function RedNavbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -58,11 +58,11 @@ export default function RedNavbar() {
             {/* THEME */}
             {mounted && (
               <button
-                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
                 aria-label="Tema değiştir"
                 className="hidden h-9 w-9 place-items-center rounded-full border border-white/20 text-white/70 transition-colors hover:border-[#ff4d00] hover:text-[#ff4d00] sm:grid"
               >
-                {theme === "dark" ? "☾" : "☀"}
+                {resolvedTheme === "dark" ? "☾" : "☀"}
               </button>
             )}
             {/* CTA */}

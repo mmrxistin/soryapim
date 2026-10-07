@@ -5,8 +5,9 @@
 "use client";
 import React from "react";
 import Link from "next/link";
-import { AGENCY, STATS, CASES, SERVICES, NEWS, CLIENTS } from "./ajans-veri";
+import { AGENCY, STATS, CASES, SERVICES, CLIENTS } from "./ajans-veri";
 import HeroUnderwaterScene from "./components/hero-underwater";
+import ParvekirinaYek from "./yek/parvekirin";
 
 const MARQUEE = "FİKİRDEN ETKİYE — RED YAPIM — ";
 
@@ -154,29 +155,7 @@ export default function AgencyPage() {
               <h2 className="text-4xl font-black uppercase tracking-tight sm:text-6xl">Haberler</h2>
             </div>
           </div>
-          <ul className="m-0 grid list-none grid-cols-1 gap-6 p-0 md:grid-cols-2 lg:grid-cols-4">
-            {NEWS.map((n) => (
-              <li key={n.title}>
-                <a
-                  href={n.href}
-                  className="group flex h-full flex-col rounded-3xl border border-white/10 bg-zinc-900/60 p-8 no-underline transition-all hover:border-[#ff4d00]/60 hover:bg-zinc-900"
-                >
-                  <div className="flex items-center gap-3">
-                    <span className="rounded-full bg-[#ff4d00]/10 px-3 py-1 text-[10px] font-black uppercase tracking-[0.14em] text-[#ff4d00]">
-                      {n.cat}
-                    </span>
-                    <span className="text-[10px] font-bold uppercase tracking-[0.14em] text-zinc-500">{n.date}</span>
-                  </div>
-                  <h3 className="mt-6 text-lg font-bold leading-snug text-zinc-100 transition-colors group-hover:text-[#ff4d00]">
-                    {n.title}
-                  </h3>
-                  <span className="mt-auto pt-6 text-xs font-black uppercase tracking-[0.14em] text-zinc-300">
-                    Oku <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
-                  </span>
-                </a>
-              </li>
-            ))}
-          </ul>
+          <ParvekirinaYek />
         </div>
       </section>
 

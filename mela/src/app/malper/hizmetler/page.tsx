@@ -5,6 +5,7 @@
 import React from "react";
 import Link from "next/link";
 import { SERVICES, AGENCY } from "../ajans-veri";
+import ParvekirinaYek from "../yek/parvekirin";
 
 export const metadata = { title: "Hizmetler" };
 
@@ -76,6 +77,19 @@ export default function HizmetlerPage() {
         >
           {AGENCY.email}
         </Link>
+      </section>
+
+      {/* ADMIN YEK FEED */}
+      <section className="border-t border-white/10 px-4 py-20 sm:px-6 lg:px-10">
+        <div className="mx-auto max-w-[1600px]">
+          <p className="mb-3 text-xs font-black uppercase tracking-[0.3em] text-[#ff4d00]">
+            Paylaşım
+          </p>
+          <h2 className="mb-8 text-4xl font-black uppercase tracking-tight sm:text-6xl">
+            Son İçerikler
+          </h2>
+          <ParvekirinaYek />
+        </div>
       </section>
     </main>
   );
