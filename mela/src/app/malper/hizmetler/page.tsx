@@ -5,7 +5,7 @@
 import React from "react";
 import Link from "next/link";
 import { SERVICES, AGENCY } from "../ajans-veri";
-import ParvekirinaYek from "../yek/parvekirin";
+import ParvekirinaYek from "../components/parvekirin";
 
 export const metadata = { title: "Hizmetler" };
 

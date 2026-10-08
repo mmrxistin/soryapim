@@ -3,7 +3,7 @@
 // Esselatu vesselamu ala rasulina Muhammedin .
 // La ilahe ill Allah Muhammeden Rasulullah
 import React from "react";
-import ParvekirinaYek from "../yek/parvekirin";
+import ParvekirinaYek from "../components/parvekirin";
 
 export const metadata = { title: "İşler" };
 

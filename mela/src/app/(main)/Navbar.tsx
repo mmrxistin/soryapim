@@ -58,17 +58,10 @@ export default function Navbar() {
           <div className="flex items-center gap-3">
             <Dropdown>
               <Dropdown.Toggle variant="link" className="text-sm font-medium text-secondary hover:text-primary px-0">
-                Bölümler
+                İçerik
               </Dropdown.Toggle>
               <Dropdown.Menu>
-                <Dropdown.Item as={Link} href="/penc">Penc</Dropdown.Item>
-                <Dropdown.Item as={Link} href="/dirok">Dirok</Dropdown.Item>
-                <Dropdown.Item as={Link} href="/xane">Xane</Dropdown.Item>
-                <Dropdown.Item as={Link} href="/rojname">Rojname</Dropdown.Item>
-                <Dropdown.Item as={Link} href="/car">Car</Dropdown.Item>
-                <Dropdown.Item as={Link} href="/se">Se</Dropdown.Item>
-                <Dropdown.Item as={Link} href="/du">Du</Dropdown.Item>
-                <Dropdown.Item as={Link} href="/yek">Yek</Dropdown.Item>
+                <Dropdown.Item as={Link} href="/isler">İşler</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
 
@@ -129,16 +122,9 @@ export default function Navbar() {
 
             <div className="flex flex-col gap-1">
               <details className="group">
-                <summary className="px-3 py-2 rounded cursor-pointer hover:bg-muted">Bölümler</summary>
+                <summary className="px-3 py-2 rounded cursor-pointer hover:bg-muted">İçerik</summary>
                 <div className="pl-4">
-                  <Link href="/penc" className="block px-3 py-2 rounded hover:bg-muted" onClick={handleLinkClick}>Penc</Link>
-                  <Link href="/dirok" className="block px-3 py-2 rounded hover:bg-muted" onClick={handleLinkClick}>Dirok</Link>
-                  <Link href="/xane" className="block px-3 py-2 rounded hover:bg-muted" onClick={handleLinkClick}>Xane</Link>
-                  <Link href="/rojname" className="block px-3 py-2 rounded hover:bg-muted" onClick={handleLinkClick}>Rojname</Link>
-                  <Link href="/car" className="block px-3 py-2 rounded hover:bg-muted" onClick={handleLinkClick}>Car</Link>
-                  <Link href="/se" className="block px-3 py-2 rounded hover:bg-muted" onClick={handleLinkClick}>Se</Link>
-                  <Link href="/du" className="block px-3 py-2 rounded hover:bg-muted" onClick={handleLinkClick}>Du</Link>
-                  <Link href="/yek" className="block px-3 py-2 rounded hover:bg-muted" onClick={handleLinkClick}>Yek</Link>
+                  <Link href="/isler" className="block px-3 py-2 rounded hover:bg-muted" onClick={handleLinkClick}>İşler</Link>
                 </div>
               </details>
 

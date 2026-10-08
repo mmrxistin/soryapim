@@ -18,11 +18,11 @@ import React, { useState } from "react";
  */
 
 const sonDakika = [
-  { title: "Gîyadin'de siyanür süreci başladı!", href: "/malper/penc", cat: "EKOLOJİ" },
-  { title: "Nisêbîn'de anma alanına ziyaretler sürüyor", href: "/malper/du", cat: "GÜNDEM" },
-  { title: "Maden işçileri kazandı: Direnişimiz zaferle sonuçlandı", href: "/malper/se", cat: "EKONOMİ" },
-  { title: "Irak'ta 12 milletvekili ve yetkilinin mal varlığına el konuldu", href: "/malper/yek", cat: "DÜNYA" },
-  { title: "Uyuşturucuya karşı çıktığı için tutuklanan 3 genç tahliye edildi", href: "/malper/car", cat: "GÜNDEM" },
+  { title: "Gîyadin'de siyanür süreci başladı!", href: "/malper/isler", cat: "EKOLOJİ" },
+  { title: "Nisêbîn'de anma alanına ziyaretler sürüyor", href: "/malper/isler", cat: "GÜNDEM" },
+  { title: "Maden işçileri kazandı: Direnişimiz zaferle sonuçlandı", href: "/malper/isler", cat: "EKONOMİ" },
+  { title: "Irak'ta 12 milletvekili ve yetkilinin mal varlığına el konuldu", href: "/malper/isler", cat: "DÜNYA" },
+  { title: "Uyuşturucuya karşı çıktığı için tutuklanan 3 genç tahliye edildi", href: "/malper/isler", cat: "GÜNDEM" },
 ];
 
 const yazarlar = [

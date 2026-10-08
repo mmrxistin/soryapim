@@ -7,7 +7,7 @@ import React from "react";
 import Link from "next/link";
 import { AGENCY, STATS, CASES, SERVICES, CLIENTS } from "./ajans-veri";
 import HeroUnderwaterScene from "./components/hero-underwater";
-import ParvekirinaYek from "./yek/parvekirin";
+import ParvekirinaYek from "./components/parvekirin";
 
 const MARQUEE = "FİKİRDEN ETKİYE — RED YAPIM — ";
 

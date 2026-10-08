@@ -3,23 +3,17 @@
 // Esselatu vesselamu ala rasulina Muhammedin .
 // La ilahe ill Allah Muhammeden Rasulullah
 
-// Bismillahirahmanirahim 
-
 "use client";
 
 import InfiniteScrollContainer from "@/components/InfiniteScrollContainer";
 import Post from "@/components/yek/Post";
 import PostsLoadingSkeleton from "@/components/yek/PostsLoadingSkeleton";
 import kyInstance from "@/lib/ky";
-import { yekayekePage } from "@/lib/types";
+import { YekPage } from "@/lib/types";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import { Loader2 } from "lucide-react";
 
-interface SearchResultsProps {
-  query: string;
-}
-
-export default function SearchResults({ query }: SearchResultsProps) {
+export default function ParvekirinaYek() {
   const {
     data,
     fetchNextPage,
@@ -28,46 +22,35 @@ export default function SearchResults({ query }: SearchResultsProps) {
     isFetchingNextPage,
     status,
   } = useInfiniteQuery({
-    queryKey: ["post-feed", "search", query],
+    queryKey: ["post-feed", "for-you"],
     queryFn: ({ pageParam }) =>
       kyInstance
-        .get("/api/search", {
-          searchParams: {
-            q: query,
-            ...(pageParam ? { cursor: pageParam } : {}),
-          },
-        })
-        .json<yekayekePage>(),
+        .get(
+          "/api/parvekrin/Yek",
+          pageParam ? { searchParams: { cursor: pageParam } } : {},
+        )
+        .json<YekPage>(),
     initialPageParam: null as string | null,
     getNextPageParam: (lastPage) => lastPage.nextCursor,
-    gcTime: 0,
   });
 
+  const posts =
+    data?.pages.flatMap((page) => {
+      if ("items" in page && Array.isArray((page as any).items)) return (page as any).items;
+      if ("posts" in page && Array.isArray((page as any).posts)) return (page as any).posts;
+      return [];
+    }) || [];
 
-// SuphanAllah velhamdulillah, Allahu Ekber
-const posts = data?.pages.flatMap((page) => {
-    if ("items" in page && Array.isArray((page as any).items)) return (page as any).items;
-    if ("posts" in page && Array.isArray((page as any).posts)) return (page as any).posts;
-    return [];
-  }) || [];
   if (status === "pending") {
     return <PostsLoadingSkeleton />;
   }
 
   if (status === "success" && !posts.length && !hasNextPage) {
-    return (
-      <p className="text-center text-muted-foreground">
-        No posts found for this query.
-      </p>
-    );
+    return <p className="text-center text-muted-foreground">Hê kesî tiştek parvenekirî ye</p>;
   }
 
   if (status === "error") {
-    return (
-      <p className="text-center text-destructive">
-        An error occurred while loading posts.
-      </p>
-    );
+    return <p className="text-center text-destructive">Pirsgirek derket</p>;
   }
 
   return (
