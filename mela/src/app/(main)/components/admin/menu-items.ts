@@ -5,17 +5,13 @@
 
 import {
   FileText,
-  Film,
   Gauge,
-  Home,
   Images,
   Layout,
   Mail,
   MessageSquare,
   Newspaper,
-  PenTool,
-  PlayCircle,
-  Star,
+  ShieldCheck,
   Users,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
@@ -27,12 +23,14 @@ export interface AdminMenuItem {
   badgeKey?: string;
 }
 
-// (main) · Red Yapım Malper Yönetim Paneli menüsü.
-// Her başlık malper'deki ilgili içerik bölümünü yönetir.
 export const adminMenuItems: AdminMenuItem[] = [
   { label: "Genel Bakış", href: "/", icon: Gauge },
-  { label: "Malper (Önizleme)", href: "/malper", icon: Layout },
-  { label: "İşler", href: "/isler", icon: Images },
+  { label: "Malper", href: "/malper", icon: Layout },
+  { label: "İşler", href: "/malper/isler", icon: Images },
+  { label: "Hizmetler", href: "/malper/hizmetler", icon: ShieldCheck },
+  { label: "Xane", href: "/xane", icon: Newspaper },
+  { label: "Yek", href: "/yek", icon: Newspaper },
+  { label: "Du", href: "/du", icon: Newspaper },
   { label: "Malper Sayfaları", href: "/malper-sayfalari", icon: FileText },
   { label: "Kullanıcılar", href: "/users", icon: Users },
   { label: "Peyam", href: "/peyam", icon: Mail, badgeKey: "messages" },

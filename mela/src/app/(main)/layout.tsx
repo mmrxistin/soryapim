@@ -29,24 +29,27 @@ export default async function Layout({
 
   if (!session.user) redirect("/malper");
 
-  return(  <SessionProvider value={session}>
-    <Navbar />
-          
-        <aside className="hidden w-72 shrink-0 lg:block">
-          <div className="sticky top-5 rounded-3xl border border-slate-200 bg-white p-4 shadow-sm">
-            <h2 className="mb-4 text-xs font-semibold uppercase tracking-[0.25em] text-slate-500">
-              Malper Yönetim Menüsü
-            </h2>
-            <MenuBar />
-          </div>
-        </aside>
+  return (
+    <SessionProvider value={session}>
+      <div className="min-h-screen bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100">
+        <Navbar />
 
-        <main className="flex-1 space-y-6">
-      
-    {children}
-    </main>
-   <AdminFooter />
-  </SessionProvider>)
+        <div className="mx-auto grid w-full max-w-7xl gap-6 px-4 py-6 sm:px-6 lg:grid-cols-[17.5rem_minmax(0,1fr)] lg:px-8">
+          <aside className="hidden lg:block">
+            <div className="sticky top-24 self-start">
+              <MenuBar />
+            </div>
+          </aside>
+
+          <main className="min-w-0 space-y-6">
+            {children}
+          </main>
+        </div>
+
+        <AdminFooter />
+      </div>
+    </SessionProvider>
+  );
 }
 
 

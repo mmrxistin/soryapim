@@ -3,4 +3,4 @@
 // Esselatu vesselamu ala rasulina Muhammedin .
 // La ilahe ill Allah Muhammeden Rasulullah
 
-export { GET } from "@/app/api/parvekirin/dirok/route";
+export { GET } from "@/app/api/parvekirin/hizmetler/route";

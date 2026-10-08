@@ -3,4 +3,4 @@
 // Esselatu vesselamu ala rasulina Muhammedin .
 // La ilahe ill Allah Muhammeden Rasulullah
 
-export { GET } from "@/app/api/parvekirin/penc/route";
+export { GET } from "@/app/api/parvekirin/anasayfa/route";

@@ -48,6 +48,9 @@ export default function Navbar() {
         </div>
 
         <nav className="hidden lg:flex items-center gap-6">
+          <Link href="/" className="text-sm font-medium text-secondary hover:text-primary">
+            Ana Sayfa
+          </Link>
           <Link href="/malper" className="text-sm font-medium text-secondary hover:text-primary">
             Malper Önizleme
           </Link>
@@ -61,7 +64,11 @@ export default function Navbar() {
                 İçerik
               </Dropdown.Toggle>
               <Dropdown.Menu>
-                <Dropdown.Item as={Link} href="/isler">İşler</Dropdown.Item>
+                <Dropdown.Item as={Link} href="/malper/isler">İşler</Dropdown.Item>
+                <Dropdown.Item as={Link} href="/malper/hizmetler">Hizmetler</Dropdown.Item>
+                <Dropdown.Item as={Link} href="/xane">Xane</Dropdown.Item>
+                <Dropdown.Item as={Link} href="/yek">Yek</Dropdown.Item>
+                <Dropdown.Item as={Link} href="/du">Du</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
 
@@ -73,11 +80,17 @@ export default function Navbar() {
                 <Dropdown.Item as={Link} href="/users">Kullanıcılar</Dropdown.Item>
                 <Dropdown.Item as={Link} href="/peyam">Peyam</Dropdown.Item>
                 <Dropdown.Item as={Link} href="/naverok">İçerik İşlemleri</Dropdown.Item>
-                <Dropdown.Item as={Link} href="/account">Hesap</Dropdown.Item>
+                <Dropdown.Item as={Link} href="/malper/account">Hesap</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
           </div>
 
+          <Link href="/malper/hakkinda" className="text-sm font-medium text-secondary hover:text-primary">
+            Hakkında
+          </Link>
+          <Link href="/malper/iletisim" className="text-sm font-medium text-secondary hover:text-primary">
+            İletişim
+          </Link>
           <Link href="/peyam" className="text-sm font-medium text-secondary hover:text-primary">
             Peyam
           </Link>
@@ -111,6 +124,9 @@ export default function Navbar() {
         />
         <nav className="relative bg-card p-4 shadow-lg max-h-[calc(100vh-64px)] overflow-auto">
           <div className="flex flex-col gap-2">
+            <Link href="/" className="block px-3 py-2 rounded hover:bg-muted" onClick={handleLinkClick}>
+              Ana Sayfa
+            </Link>
             <Link href="/malper" className="block px-3 py-2 rounded hover:bg-muted" onClick={handleLinkClick}>
               Malper Önizleme
             </Link>
@@ -124,7 +140,11 @@ export default function Navbar() {
               <details className="group">
                 <summary className="px-3 py-2 rounded cursor-pointer hover:bg-muted">İçerik</summary>
                 <div className="pl-4">
-                  <Link href="/isler" className="block px-3 py-2 rounded hover:bg-muted" onClick={handleLinkClick}>İşler</Link>
+                  <Link href="/malper/isler" className="block px-3 py-2 rounded hover:bg-muted" onClick={handleLinkClick}>İşler</Link>
+                  <Link href="/malper/hizmetler" className="block px-3 py-2 rounded hover:bg-muted" onClick={handleLinkClick}>Hizmetler</Link>
+                  <Link href="/xane" className="block px-3 py-2 rounded hover:bg-muted" onClick={handleLinkClick}>Xane</Link>
+                  <Link href="/yek" className="block px-3 py-2 rounded hover:bg-muted" onClick={handleLinkClick}>Yek</Link>
+                  <Link href="/du" className="block px-3 py-2 rounded hover:bg-muted" onClick={handleLinkClick}>Du</Link>
                 </div>
               </details>
 
@@ -134,11 +154,17 @@ export default function Navbar() {
                   <Link href="/users" className="block px-3 py-2 rounded hover:bg-muted" onClick={handleLinkClick}>Kullanıcılar</Link>
                   <Link href="/peyam" className="block px-3 py-2 rounded hover:bg-muted" onClick={handleLinkClick}>Peyam</Link>
                   <Link href="/naverok" className="block px-3 py-2 rounded hover:bg-muted" onClick={handleLinkClick}>İçerik İşlemleri</Link>
-                  <Link href="/account" className="block px-3 py-2 rounded hover:bg-muted" onClick={handleLinkClick}>Hesap</Link>
+                  <Link href="/malper/account" className="block px-3 py-2 rounded hover:bg-muted" onClick={handleLinkClick}>Hesap</Link>
                 </div>
               </details>
             </div>
 
+            <Link href="/malper/hakkinda" className="block px-3 py-2 rounded hover:bg-muted" onClick={handleLinkClick}>
+              Hakkında
+            </Link>
+            <Link href="/malper/iletisim" className="block px-3 py-2 rounded hover:bg-muted" onClick={handleLinkClick}>
+              İletişim
+            </Link>
             <Link href="/peyam" className="block px-3 py-2 rounded hover:bg-muted" onClick={handleLinkClick}>
               Peyam
             </Link>

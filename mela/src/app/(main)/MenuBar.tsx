@@ -51,47 +51,50 @@ export default async function MenuBar({ className }: MenuBarProps) {
 
   return (
     <div
-      className={`w-full rounded-2xl bg-white p-4 shadow-sm ${className ?? ""}`}
+      className={`w-full overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white shadow-lg shadow-slate-900/5 ${className ?? ""}`}
     >
-      <div className="mb-5 rounded-2xl bg-slate-900 p-5 text-white">
-        <div className="text-lg font-bold">
-          {user.username}
+      <div className="bg-gradient-to-br from-slate-950 via-slate-900 to-red-950 p-5 text-white">
+        <div className="flex items-center gap-3">
+          <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white/10 text-sm font-bold text-red-200">
+            {user.username.slice(0, 2).toUpperCase()}
+          </div>
+          <div>
+            <p className="text-sm font-semibold">{user.username}</p>
+            <p className="text-xs text-slate-300">Yönetici hesabı</p>
+          </div>
         </div>
-
-        <div className="mt-1 text-sm text-slate-300">
-          Red Yapım · Malper Yönetimi
-        </div>
+        <p className="mt-4 text-xs uppercase tracking-[0.2em] text-red-200">
+          Red Yapım · Yönetim
+        </p>
       </div>
 
-      <div className="space-y-2">
-        {adminMenuItems.map((item) => (
-          <Button
-            key={item.href}
-            variant="ghost"
-            className="w-full justify-between rounded-3xl px-4 py-3 text-left"
-            asChild
-          >
+      <div className="p-3">
+        <div className="mb-2 px-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-400">
+          Menü
+        </div>
+
+        <nav className="space-y-1">
+          {adminMenuItems.map((item) => (
             <Link
+              key={item.href}
               href={item.href}
-              className="flex w-full items-center justify-between gap-3"
+              className="group flex items-center justify-between gap-3 rounded-2xl px-3 py-2.5 text-sm font-medium text-slate-700 transition hover:bg-red-50 hover:text-red-700 dark:text-slate-200 dark:hover:bg-red-950/30 dark:hover:text-red-300"
             >
-              <span className="flex items-center gap-2 text-sm text-slate-700">
-                <item.icon className="h-5 w-5 shrink-0" />
+              <span className="flex items-center gap-3">
+                <item.icon className="h-4 w-4 shrink-0 transition group-hover:scale-110" />
                 <span>{item.label}</span>
               </span>
 
               {item.badgeKey === "messages" && messageCount > 0 ? (
-                <span className="rounded-full bg-rose-500 px-2 py-0.5 text-[11px] font-semibold text-white">
+                <span className="min-w-5 rounded-full bg-red-600 px-1.5 py-0.5 text-center text-[10px] font-bold text-white">
                   {messageCount}
                 </span>
-              ) : (
-                <span className="text-xs text-slate-400">
-                  Git
-                </span>
-              )}
+              ) : item.badgeKey === "messages" ? (
+                <span className="h-2 w-2 rounded-full bg-slate-300" aria-hidden="true" />
+              ) : null}
             </Link>
-          </Button>
-        ))}
+          ))}
+        </nav>
       </div>
     </div>
   );
