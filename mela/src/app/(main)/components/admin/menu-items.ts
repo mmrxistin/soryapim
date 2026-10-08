@@ -33,6 +33,7 @@ export const adminMenuItems: AdminMenuItem[] = [
   { label: "Genel Bakış", href: "/", icon: Gauge },
   { label: "Malper (Önizleme)", href: "/malper", icon: Layout },
   { label: "İşler", href: "/isler", icon: Images },
+  { label: "Malper Sayfaları", href: "/malper-sayfalari", icon: FileText },
   { label: "Kullanıcılar", href: "/users", icon: Users },
   { label: "Peyam", href: "/peyam", icon: Mail, badgeKey: "messages" },
   { label: "İçerik İşlemleri", href: "/naverok", icon: MessageSquare },

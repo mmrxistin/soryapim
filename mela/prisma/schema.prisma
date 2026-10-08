@@ -173,6 +173,20 @@ model Tefsir {
   @@map("tefsir")
 }
 
+model MalperPage {
+  id          String   @id @default(cuid())
+  title       String
+  slug        String   @unique
+  description String?
+  content     String
+  layout      String   @default("standard")
+  published   Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("malper_pages")
+}
+
 model Dirok {
   id          String   @id @default(cuid())
   content     String[]

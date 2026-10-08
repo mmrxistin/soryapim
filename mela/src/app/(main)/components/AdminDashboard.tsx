@@ -54,6 +54,12 @@ const dashboardCards = [
     icon: Images,
   },
   {
+    title: "Malper Sayfaları",
+    description: "Malper için yeni sayfalar oluşturup düzenleyin ve yayın durumunu yönetin.",
+    href: "/malper-sayfalari",
+    icon: FileText,
+  },
+  {
     title: "Kullanıcılar",
     description: "Yazar ve kullanıcı hesaplarını görüntüleyin, yönetin.",
     href: "/users",

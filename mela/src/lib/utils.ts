@@ -29,6 +29,15 @@ export function formatNumber(n: number): string {
   }).format(n);
 }
 
+export function escapeHtml(value: string): string {
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
 export function slugify(input: string): string {
   return input
     .toLowerCase()
