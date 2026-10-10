@@ -6,10 +6,11 @@
 "use client";
 
 import InfiniteScrollContainer from "@/components/InfiniteScrollContainer";
-import Post from "@/components/yek/Post";
-import PostsLoadingSkeleton from "@/components/yek/PostsLoadingSkeleton";
+import CarPost from "@/components/car/Post";
+import CarPostEditor from "@/components/car/editor/PostEditor";
+import PostsLoadingSkeleton from "@/components/car/PostsLoadingSkeleton";
 import kyInstance from "@/lib/ky";
-import { YekPage } from "@/lib/types";
+import { CarPage } from "@/lib/types";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import { Loader2 } from "lucide-react";
 
@@ -22,14 +23,14 @@ export default function ParvekirinaYek() {
     isFetchingNextPage,
     status,
   } = useInfiniteQuery({
-    queryKey: ["post-feed", "for-you"],
+    queryKey: ["post-feed", "isler"],
     queryFn: ({ pageParam }) =>
       kyInstance
         .get(
-          "/api/parvekirin/yek",
+          "/api/parvekirin/isler",
           pageParam ? { searchParams: { cursor: pageParam } } : {},
         )
-        .json<YekPage>(),
+        .json<CarPage>(),
     initialPageParam: null as string | null,
     getNextPageParam: (lastPage) => lastPage.nextCursor,
   });
@@ -46,7 +47,12 @@ export default function ParvekirinaYek() {
   }
 
   if (status === "success" && !posts.length && !hasNextPage) {
-    return <p className="text-center text-muted-foreground">Hê kesî tiştek parvenekirî ye</p>;
+    return (
+      <div className="space-y-5">
+        <CarPostEditor />
+        <p className="text-center text-muted-foreground">Henüz işler için içerik paylaşılmadı.</p>
+      </div>
+    );
   }
 
   if (status === "error") {
@@ -54,14 +60,17 @@ export default function ParvekirinaYek() {
   }
 
   return (
-    <InfiniteScrollContainer
-      className="space-y-5"
-      onBottomReached={() => hasNextPage && !isFetching && fetchNextPage()}
-    >
-      {posts.map((post) => (
-        <Post key={post.id} post={post} />
-      ))}
-      {isFetchingNextPage && <Loader2 className="mx-auto my-3 animate-spin" />}
-    </InfiniteScrollContainer>
+    <div className="space-y-5">
+      <CarPostEditor />
+      <InfiniteScrollContainer
+        className="space-y-5"
+        onBottomReached={() => hasNextPage && !isFetching && fetchNextPage()}
+      >
+        {posts.map((post) => (
+          <CarPost key={post.id} post={post} />
+        ))}
+        {isFetchingNextPage && <Loader2 className="mx-auto my-3 animate-spin" />}
+      </InfiniteScrollContainer>
+    </div>
   );
 }
