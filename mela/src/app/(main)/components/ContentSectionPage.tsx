@@ -1,10 +1,13 @@
 "use client";
 
 import InfiniteScrollContainer from "@/components/InfiniteScrollContainer";
-import PostsLoadingSkeleton from "@/components/xane/PostsLoadingSkeleton";
-import XanePost from "@/components/xane/Post";
-import YekPost from "@/components/yek/Post";
+import DuPostEditor from "@/components/du/editor/PostEditor";
 import DuPost from "@/components/du/Post";
+import PostsLoadingSkeleton from "@/components/xane/PostsLoadingSkeleton";
+import XanePostEditor from "@/components/xane/editor/PostEditor";
+import XanePost from "@/components/xane/Post";
+import YekPostEditor from "@/components/yek/editor/PostEditor";
+import YekPost from "@/components/yek/Post";
 import kyInstance from "@/lib/ky";
 import { XanePage, YekPage, duPage } from "@/lib/types";
 import { useInfiniteQuery } from "@tanstack/react-query";
@@ -44,6 +47,12 @@ export default function ContentSectionPage({
     return <DuPost key={post.id} post={post as any} />;
   };
 
+  const renderEditor = () => {
+    if (postType === "xane") return <XanePostEditor />;
+    if (postType === "yek") return <YekPostEditor />;
+    return <DuPostEditor />;
+  };
+
   if (status === "pending") {
     return (
       <section className="space-y-6 p-4 sm:p-6">
@@ -79,6 +88,10 @@ export default function ContentSectionPage({
           {posts.length} içerik
         </span>
       </header>
+
+      <div className="rounded-3xl border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-700 dark:bg-slate-900">
+        {renderEditor()}
+      </div>
 
       {posts.length === 0 ? (
         <div className="rounded-3xl border border-dashed border-slate-300 bg-white p-10 text-center text-slate-500 dark:border-slate-700 dark:bg-slate-900">

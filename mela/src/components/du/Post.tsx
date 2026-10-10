@@ -43,13 +43,9 @@ export default function Post({ post }: PostProps) {
                 {post.user.displayName}
               </Link>
             </UserTooltip>
-            <Link
-              href={`/malper/mmhewcedari/posts/${post.id}`}
-              className="block text-sm text-muted-foreground hover:underline"
-              suppressHydrationWarning
-            >
+            <span className="block text-sm text-muted-foreground">
               {formatRelativeDate(post.createdAt)}
-            </Link>
+            </span>
           </div>
         </div>
         {post.user.id === user.id && (

@@ -46,13 +46,9 @@ export default function Post({ post }: PostProps) {
       <hr className="text-muted-foreground" />
       <div className="flex justify-between gap-5">
         <div className="flex items-center gap-5">
-          <Link
-            href={`/malper/Yek/posts/${post.id}`}
-            className="block text-sm text-muted-foreground hover:underline"
-            suppressHydrationWarning
-          >
-            Daha fazla oku
-          </Link>
+          <span className="block text-sm text-muted-foreground">
+            Yönetilen içerik
+          </span>
         </div>
       </div>
     </article>

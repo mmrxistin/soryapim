@@ -1,9 +1,6 @@
- // BismillahirRahmanirRahim
+// BismillahirRahmanirRahim
 // El Hamdu Lillahi Rabbul Alemin
-// Esselatu vesselamu ala rasulillah
-// Allahumme salli ala seyyidina Muhammedin
-// Allah u Ekber, Allahu Ekber, Allahu Ekber
-// La ilahe illAllah, Allahu Ekber,
+// Esselatu vesselamu ala rasulina Muhammedin
 // SubhanAllah, Elhamdulillah, La ilahe illAllah, Allahu Ekber
 // Estaxfurullah El Azim
 // Allahu Ekber ve Lillahil Hamd
@@ -19,9 +16,7 @@ import { fileRouter } from "./api/uploadthing/core";
 import "./globals.css";
 import ReactQueryProvider from "./ReactQueryProvider";
 // Elhamdulillah Elhamdulillah Elhamdulillah
-// Elhamdulillahirabbilalemin
-// La îlahe îll Allah û vahdehû(Esma ul Husna) la şerîke leh, lehul-mülkü ve lehul-hamdü .
-// Seyyidina Muhammeden abduhu ve resuluhu (s.a.v) ve habibihi
+// El Hamdu Lillahi Rabbil Alemin
 
 
 const geistSans = localFont({
@@ -68,13 +63,11 @@ export default function RootLayout({
 }
 
 
-// Elhamdulillah Elhamdulillah Elhamdulillah
-// Elhamdulillahirabbilalemin
 
-//La ilahe illAllah Muhammeden abduhu ve resuluhu
+
 
 // Elhamdulillah Elhamdulillah Elhamdulillah
-// Elhamdulillahirabbilalemin
+// El Hamdu Lillahi Rabbil Alemin
 
 
 
@@ -90,11 +83,12 @@ function Footer() {
 
 }
 // Elhamdulillah Elhamdulillah Elhamdulillah
-// Elhamdulillahirabbilalemin
+// El Hamdu Lillahi Rabbil Alemin
 // La îlahe îll Allah û vahdehû(Esma ul Husna) la şerîke leh, lehul-mülkü ve lehul-hamdü ,
-
-
 // Yuhyî ve yumît
 // Bîyadîhîl xayr
-// ve hüve alâ külli şeyin kadîr
+// ve hüve alâ külli şeyin kadîr.
+
+ // Seyyidina Muhammeden abduhu ve resuluhu (s.a.v) ve habibihi
+
 // ALLAH U EKBER VELİLLAHIL HAMD

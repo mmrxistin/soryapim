@@ -26,7 +26,7 @@ export default function ParvekirinaYek() {
     queryFn: ({ pageParam }) =>
       kyInstance
         .get(
-          "/api/parvekrin/Yek",
+          "/api/parvekirin/yek",
           pageParam ? { searchParams: { cursor: pageParam } } : {},
         )
         .json<YekPage>(),
