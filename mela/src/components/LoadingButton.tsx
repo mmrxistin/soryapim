@@ -1,3 +1,8 @@
+// BismillahirRahmanirRahim
+// El Hamdu Lillahi Rabbul Alemin
+// Esselatu vesselamu ala rasulina Muhammedin .
+// La ilahe ill Allah Muhammeden Rasulullah
+
 import { cn } from "@/lib/utils";
 import { Loader2 } from "lucide-react";
 import { Button, ButtonProps } from "./ui/button";

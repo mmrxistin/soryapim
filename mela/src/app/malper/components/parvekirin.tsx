@@ -7,7 +7,6 @@
 
 import InfiniteScrollContainer from "@/components/InfiniteScrollContainer";
 import CarPost from "@/components/car/Post";
-import CarPostEditor from "@/components/car/editor/PostEditor";
 import PostsLoadingSkeleton from "@/components/car/PostsLoadingSkeleton";
 import kyInstance from "@/lib/ky";
 import { CarPage } from "@/lib/types";
@@ -48,10 +47,9 @@ export default function ParvekirinaYek() {
 
   if (status === "success" && !posts.length && !hasNextPage) {
     return (
-      <div className="space-y-5">
-        <CarPostEditor />
-        <p className="text-center text-muted-foreground">Henüz işler için içerik paylaşılmadı.</p>
-      </div>
+      <p className="text-center text-muted-foreground">
+        Henüz içerik paylaşılmadı.
+      </p>
     );
   }
 
@@ -61,8 +59,7 @@ export default function ParvekirinaYek() {
 
   return (
     <div className="space-y-5">
-      <CarPostEditor />
-      <InfiniteScrollContainer
+           <InfiniteScrollContainer
         className="space-y-5"
         onBottomReached={() => hasNextPage && !isFetching && fetchNextPage()}
       >

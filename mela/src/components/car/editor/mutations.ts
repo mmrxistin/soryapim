@@ -1,3 +1,8 @@
+// BismillahirRahmanirRahim
+// El Hamdu Lillahi Rabbul Alemin
+// Esselatu vesselamu ala rasulina Muhammedin .
+// La ilahe ill Allah Muhammeden Rasulullah
+
 // Bismillahirrahmanirrahim
 // Elhamdulillahi Rabbil Alamin
 // Ve salatu ve selamu ala Resulina Muhammedin 
@@ -19,22 +24,21 @@ import { submitPost } from "./actions";
 
 export function useSubmitPostMutation() {
   const { toast } = useToast();
-
   const queryClient = useQueryClient();
-
   const { user } = useSession();
-
   const mutation = useMutation({
-    mutationFn: submitPost,
+    mutationFn: async (input: Parameters<typeof submitPost>[0]) => {
+      const result = await submitPost(input);
+      if (result && "error" in result && result.error) {
+        throw new Error(result.error);
+      }
+      return result;
+    },
     onSuccess: async (newPost) => {
       const queryFilter = {
-        queryKey: ["post-feed"],
+        queryKey: ["content-section"],
         predicate(query) {
-          return (
-            query.queryKey.includes("for-you") ||
-            (query.queryKey.includes("user-posts") &&
-              query.queryKey.includes(user.id))
-          );
+          return query.queryKey.includes("content-section");
         },
       } satisfies QueryFilters;
 
@@ -50,13 +54,14 @@ export function useSubmitPostMutation() {
               pageParams: oldData.pageParams,
               pages: [
                 {
-                  posts: [newPost, ...firstPage.posts],
+                  posts: [newPost as any, ...(firstPage.posts ?? [])],
                   nextCursor: firstPage.nextCursor,
                 },
                 ...oldData.pages.slice(1),
               ],
             };
           }
+          return oldData;
         },
       );
 
@@ -72,10 +77,13 @@ export function useSubmitPostMutation() {
       });
     },
     onError(error) {
-      console.error(error);
+      console.error("submitPost hatası:", error);
       toast({
         variant: "destructive",
-        description: "Sorun çıktı tekrar deneyin devam ederse yekazad SC ile iletişime geçin.",
+        description:
+          error instanceof Error && error.message
+            ? `Hata: ${error.message}`
+            : "Sorun çıktı tekrar deneyin devam ederse yekazad SC ile iletişime geçin.",
       });
     },
   });

@@ -23,41 +23,36 @@ const dashboardCards = [
     icon: Layout,
   },
   {
+    title: "Anasayfa",
+    description: "Anasayfa içeriklerini oluşturun, düzenleyin ve yönetin.",
+    href: "/anasayfa",
+    icon: Layout,
+  },
+  {
     title: "İşler",
     description: "İş içeriklerini oluşturun, güncelleyin ve yönetim ekranında takip edin.",
-    href: "/malper/isler",
+    href: "/isler",
     icon: Images,
   },
   {
     title: "Hizmetler",
     description: "Sunulan hizmetleri gösterip sayfa içeriğini yönetebilirsiniz.",
-    href: "/malper/hizmetler",
+    href: "/hizmetler",
     icon: ShieldCheck,
   },
   {
     title: "Hakkında",
     description: "Kurumsal bilgi ve hakkında sayfasını yönetin.",
-    href: "/malper/hakkinda",
+    href: "/hakkinda",
     icon: Layout,
   },
   {
     title: "İletişim",
     description: "İletişim formu ve iletişim bilgilerinin görünümünü yönetin.",
-    href: "/malper/iletisim",
+    href: "/iletisim",
     icon: MessageCircle,
   },
-  {
-    title: "Malper Sayfaları",
-    description: "Yeni sayfalar ekleyin, düzenleyin ve yayın durumunu yönetin.",
-    href: "/malper-sayfalari",
-    icon: FileText,
-  },
-  {
-    title: "Kullanıcılar",
-    description: "Yazar ve yönetici hesaplarını görüntüleyin, yönetin.",
-    href: "/users",
-    icon: Users,
-  },
+  // Malper Sayfaları kartı kaldırıldı (bölümler sadeleştirildi)
   {
     title: "Peyam",
     description: "Gelen mesajları ve geri bildirimleri hızlıca inceleyin.",

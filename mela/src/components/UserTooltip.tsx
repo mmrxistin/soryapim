@@ -1,3 +1,8 @@
+// BismillahirRahmanirRahim
+// El Hamdu Lillahi Rabbul Alemin
+// Esselatu vesselamu ala rasulina Muhammedin .
+// La ilahe ill Allah Muhammeden Rasulullah
+
 // Bismillahirrahmanirrahim 
 
 "use client";
@@ -35,9 +40,6 @@ export default function UserTooltip({ children, user }: UserTooltipProps) {
               <Link href={`/users/${user.username}`}>
                 <UserAvatar size={70} avatarUrl={user.avatarUrl} />
               </Link>
-              {loggedInUser.id !== user.id && (
-
-"")}
             </div>
             <div>
               <Link href={`/users/${user.username}`}>

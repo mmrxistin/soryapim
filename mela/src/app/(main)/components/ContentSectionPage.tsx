@@ -1,22 +1,22 @@
+// BismillahirRahmanirRahim
+// El Hamdu Lillahi Rabbul Alemin
+// Esselatu vesselamu ala rasulina Muhammedin .
+// La ilahe ill Allah Muhammeden Rasulullah
+
 "use client";
 
 import InfiniteScrollContainer from "@/components/InfiniteScrollContainer";
-import DuPostEditor from "@/components/du/editor/PostEditor";
-import DuPost from "@/components/du/Post";
-import PostsLoadingSkeleton from "@/components/xane/PostsLoadingSkeleton";
-import XanePostEditor from "@/components/xane/editor/PostEditor";
-import XanePost from "@/components/xane/Post";
-import YekPostEditor from "@/components/yek/editor/PostEditor";
-import YekPost from "@/components/yek/Post";
+import CarPostEditor from "@/components/car/editor/PostEditor";
+import CarPost from "@/components/car/Post";
+import PostsLoadingSkeleton from "@/components/car/PostsLoadingSkeleton";
 import kyInstance from "@/lib/ky";
-import { XanePage, YekPage, duPage } from "@/lib/types";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import { Loader2 } from "lucide-react";
 
 interface ContentSectionPageProps {
   title: string;
   apiPath: string;
-  postType: "xane" | "yek" | "du";
+  postType?: string;
 }
 
 export default function ContentSectionPage({
@@ -30,7 +30,7 @@ export default function ContentSectionPage({
       queryFn: ({ pageParam }) =>
         kyInstance
           .get(apiPath, pageParam ? { searchParams: { cursor: pageParam } } : {})
-          .json<XanePage | YekPage | duPage>(),
+          .json<any>(),
       initialPageParam: null as string | null,
       getNextPageParam: (lastPage) => lastPage.nextCursor,
     });
@@ -41,17 +41,9 @@ export default function ContentSectionPage({
     return [];
   }) ?? [];
 
-  const renderPost = (post: XanePage["items"][number] | YekPage["posts"][number] | duPage["items"][number]) => {
-    if (postType === "xane") return <XanePost key={post.id} post={post as any} />;
-    if (postType === "yek") return <YekPost key={post.id} post={post as any} />;
-    return <DuPost key={post.id} post={post as any} />;
-  };
+  const renderPost = (post: any) => <CarPost key={post.id} post={post} />;
 
-  const renderEditor = () => {
-    if (postType === "xane") return <XanePostEditor />;
-    if (postType === "yek") return <YekPostEditor />;
-    return <DuPostEditor />;
-  };
+  const renderEditor = () => <CarPostEditor />;
 
   if (status === "pending") {
     return (

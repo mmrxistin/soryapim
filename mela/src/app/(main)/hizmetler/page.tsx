@@ -1,10 +1,14 @@
+// BismillahirRahmanirRahim
+// El Hamdu Lillahi Rabbul Alemin
+// Esselatu vesselamu ala rasulina Muhammedin .
+// La ilahe ill Allah Muhammeden Rasulullah
 import { Metadata } from "next";
 import ContentSectionPage from "../components/ContentSectionPage";
 
 export const metadata: Metadata = {
-  title: "Du",
+  title: "Hizmetler",
 };
 
-export default function DuPage() {
-  return <ContentSectionPage title="Du" apiPath="/api/parvekirin/du" postType="du" />;
+export default function HizmetlerAdminPage() {
+  return <ContentSectionPage title="HİZMETLER" apiPath="/api/parvekirin/hizmetler" />;
 }

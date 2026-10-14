@@ -13,7 +13,7 @@
 
 import { validateRequest } from "@/auth";
 import prisma from "@/lib/prisma";
-import { getDirokInclude, DirokPage } from "@/lib/types";
+import { getCarDataInclude, CarPage } from "@/lib/types";
 import { NextRequest } from "next/server";
 
 export async function GET(req: NextRequest) {
@@ -28,8 +28,8 @@ export async function GET(req: NextRequest) {
       return Response.json({ error: "Unauthorized" }, { status: 401 });
     }
 
-    const posts = await prisma.dirok.findMany({
-      include: getDirokInclude(user.id),
+    const posts = await prisma.car.findMany({
+      include: getCarDataInclude(user.id),
       orderBy: { createdAt: "desc" },
       take: pageSize + 1,
       cursor: cursor ? { id: cursor } : undefined,
@@ -43,7 +43,7 @@ export async function GET(req: NextRequest) {
         content: Array.isArray(post.content) ? post.content : [post.content],
       })),
       nextCursor,
-    } as unknown as DirokPage;
+    } as unknown as CarPage;
 
     return Response.json(data);
   } catch (error) {

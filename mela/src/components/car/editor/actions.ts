@@ -1,3 +1,8 @@
+// BismillahirRahmanirRahim
+// El Hamdu Lillahi Rabbul Alemin
+// Esselatu vesselamu ala rasulina Muhammedin .
+// La ilahe ill Allah Muhammeden Rasulullah
+
 // Bismillahirrahmanirrahim
 // Elhamdulillahirabbulalemin
 // Es-selatu vesselamu ala resulina Muhammedin 
@@ -20,22 +25,26 @@ export async function submitPost(input: {
   content: string[];
   mediaIds: string[];
 }) {
-  const { user } = await validateRequest();
+  try {
+    const { user } = await validateRequest();
+    if (!user) return { error: "Oturum bulunamadı. Lütfen tekrar giriş yapın." };
 
-  if (!user) throw new Error("Unauthorized");
+    const { content, mediaIds } = createPostSchema.parse(input);
 
-  const { content, mediaIds } = createPostSchema.parse(input);
-
-  const newPost = await prisma.car.create({
-    data: {
-      content, // Convert string[] to a single string
-      userId: user.id,
-      attachments: {
-        connect: mediaIds.map((id) => ({ id })),
+    const newPost = await prisma.car.create({
+      data: {
+        content,
+        userId: user.id,
+        attachments: {
+          connect: mediaIds.map((id) => ({ id })),
+        },
       },
-    },
-    include: getCarDataInclude(user.id),
-  });
+      include: getCarDataInclude(user.id),
+    });
 
-  return newPost;
+    return newPost;
+  } catch (error: any) {
+    console.error("submitPost server hatası:", error);
+    return { error: error?.message || "Sunucu hatası oluştu." };
+  }
 }

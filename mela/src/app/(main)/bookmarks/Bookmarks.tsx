@@ -13,8 +13,8 @@
 "use client";
 
 import InfiniteScrollContainer from "@/components/InfiniteScrollContainer";
-import Post from "@/components/rojname/Post";
-import PostsLoadingSkeleton from "@/components/rojname/PostsLoadingSkeleton";
+import Post from "@/components/car/Post";
+import PostsLoadingSkeleton from "@/components/car/PostsLoadingSkeleton";
 import kyInstance from "@/lib/ky";
 import { XanePage } from "@/lib/types";
 import { useInfiniteQuery } from "@tanstack/react-query";

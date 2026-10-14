@@ -66,9 +66,6 @@ export default function Navbar() {
               <Dropdown.Menu>
                 <Dropdown.Item as={Link} href="/malper/isler">İşler</Dropdown.Item>
                 <Dropdown.Item as={Link} href="/malper/hizmetler">Hizmetler</Dropdown.Item>
-                <Dropdown.Item as={Link} href="/xane">Xane</Dropdown.Item>
-                <Dropdown.Item as={Link} href="/yek">Yek</Dropdown.Item>
-                <Dropdown.Item as={Link} href="/du">Du</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
 
@@ -142,9 +139,6 @@ export default function Navbar() {
                 <div className="pl-4">
                   <Link href="/malper/isler" className="block px-3 py-2 rounded hover:bg-muted" onClick={handleLinkClick}>İşler</Link>
                   <Link href="/malper/hizmetler" className="block px-3 py-2 rounded hover:bg-muted" onClick={handleLinkClick}>Hizmetler</Link>
-                  <Link href="/xane" className="block px-3 py-2 rounded hover:bg-muted" onClick={handleLinkClick}>Xane</Link>
-                  <Link href="/yek" className="block px-3 py-2 rounded hover:bg-muted" onClick={handleLinkClick}>Yek</Link>
-                  <Link href="/du" className="block px-3 py-2 rounded hover:bg-muted" onClick={handleLinkClick}>Du</Link>
                 </div>
               </details>
 

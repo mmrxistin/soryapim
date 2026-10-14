@@ -3,12 +3,9 @@
 // Esselatu vesselamu ala rasulina Muhammedin .
 // La ilahe ill Allah Muhammeden Rasulullah
 
-// Bismillahirrahmanirahim
-// Elhamdullillahirabbulalemin
-//Es-selatu vesselamu ala rasulina Muhammedin 
-// Subhanallahi ve bihamdihi
-// SubhanAllahul Azim ve bihamdihi
-// La ilahe illallah muhammadur resulullah
+// SubhanAllah ve Bihamdihi
+// Subhan Allah ul Azim ve Bihamdihi
+// La ilahe illAllah muhammadur resulullah
 
 import { validateRequest } from "@/auth";
 import prisma from "@/lib/prisma";

@@ -15,14 +15,14 @@ const jinArticles = [
     title: "Kadın özgürlük mücadelesinde yeni bir dönem",
     author: "Ayşe Düzkan",
     img: "https://yeniyasamgazetesi9.com/wp-content/uploads/2026/08/823x463cc-amd-29-08-26-gulistan-doku-dosya-yeni-gelisme-350x250.jpeg",
-    href: "/malper/rojname"
+    href: "/malper/hizmetler"
   },
   {
     id: 2,
     title: "Ekoloji ve kadın: Doğa ile kurulan bağ",
     author: "Zeynep Kuray",
     img: "https://yeniyasamgazetesi9.com/wp-content/uploads/2026/08/690x390cc-mrk-28-08-2028-turk-sihasi-yunanitan-havaalanina-girdi-360x180.jpg",
-    href: "/malper/rojname"
+    href: "/malper/hizmetler"
   }
 ];
 
@@ -99,7 +99,7 @@ export default function MmJinDergi({
               "Kadınların sesi, özgür yaşamın izi..."
             </p>
             <a
-              href="/malper/rojname"
+              href="/malper/hizmetler"
               className="px-8 py-3 bg-[#d90000] text-white text-xs font-black uppercase tracking-widest rounded-full hover:bg-zinc-900 dark:hover:bg-red-700 transition-colors shadow-lg shadow-red-500/20"
             >
               DERGİYİ OKU

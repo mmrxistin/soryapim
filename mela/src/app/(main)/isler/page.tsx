@@ -1,10 +1,14 @@
+// BismillahirRahmanirRahim
+// El Hamdu Lillahi Rabbul Alemin
+// Esselatu vesselamu ala rasulina Muhammedin .
+// La ilahe ill Allah Muhammeden Rasulullah
 import { Metadata } from "next";
 import ContentSectionPage from "../components/ContentSectionPage";
 
 export const metadata: Metadata = {
-  title: "Xane",
+  title: "İşler",
 };
 
-export default function XanePage() {
-  return <ContentSectionPage title="Xane" apiPath="/api/parvekirin/xane" postType="xane" />;
+export default function IslerAdminPage() {
+  return <ContentSectionPage title="İŞLER" apiPath="/api/parvekirin/isler" />;
 }

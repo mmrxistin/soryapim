@@ -18,17 +18,13 @@ import { NextRequest } from "next/server";
 export async function GET(req: NextRequest) {
   try {
     const cursor = req.nextUrl.searchParams.get("cursor") || undefined;
-
     const pageSize = 10;
-
     const { user } = await validateRequest();
-
-    if (!user) {
-      return Response.json({ error: "Unauthorized" }, { status: 401 });
-    }
-
+    // Ziyaretçiler de görebilir (malper ön yüzü); oturum yoksa kullanıcıya özel
+    // alanlar (like/bookmark durumu) boş döner.
+    const userId = user?.id ?? "";
     const posts = await prisma.car.findMany({
-      include: getCarDataInclude(user.id),
+      include: getCarDataInclude(userId),
       orderBy: { createdAt: "desc" },
       take: pageSize + 1,
       cursor: cursor ? { id: cursor } : undefined,

@@ -32,7 +32,7 @@ export default async function Layout({
   return (
     <SessionProvider value={session}>
       <div className="min-h-screen bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100">
-        <Navbar />
+  
 
         <div className="mx-auto grid w-full max-w-7xl gap-6 px-4 py-6 sm:px-6 lg:grid-cols-[17.5rem_minmax(0,1fr)] lg:px-8">
           <aside className="hidden lg:block">

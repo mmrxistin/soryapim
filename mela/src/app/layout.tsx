@@ -6,12 +6,11 @@
 // Allahu Ekber ve Lillahil Hamd
 import React from "react";
 import { Toaster } from "@/components/ui/toaster";
-import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
 import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
 import localFont from "next/font/local";
-import { extractRouterConfig } from "uploadthing/server";
-import { fileRouter } from "./api/uploadthing/core";
+import { validateRequest } from "@/auth";
+import SessionProvider from "./(main)/SessionProvider";
 // @ts-ignore: side-effect import for global CSS
 import "./globals.css";
 import ReactQueryProvider from "./ReactQueryProvider";
@@ -36,15 +35,22 @@ export const metadata: Metadata = {
   keywords: ["Red Yapım · Productive Agency · Strateji · Tasarım · Prodüksiyon · Medya"],
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // SessionProvider'ı root'a taşıdık: /malper gibi SessionProvider'sız bölümlerde
+  // useSession çağıran bileşenler (car/Post, PostEditor) hata vermesin.
+  // Oturum yoksa null user ile sağlanır; bileşenler user ? ... : null ile güvenli kullanır.
+  const session = await validateRequest();
+  const sessionValue: any = session.user
+    ? session
+    : { user: { id: "", username: "", displayName: "", avatarUrl: null, bio: null, createdAt: new Date() }, session: { id: "", userId: "", expiresAt: new Date() } };
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <NextSSRPlugin routerConfig={extractRouterConfig(fileRouter)} />
+        <SessionProvider value={sessionValue}>
         <ReactQueryProvider>
           <ThemeProvider
             attribute="class"
@@ -57,6 +63,7 @@ export default function RootLayout({
           </ThemeProvider>
         </ReactQueryProvider>
         <Toaster />
+        </SessionProvider>
       </body>
     </html>
   );
