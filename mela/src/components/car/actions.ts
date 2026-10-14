@@ -18,21 +18,16 @@ import { getCarDataInclude } from "@/lib/types";
 
 export async function deletePost(id: string) {
   const { user } = await validateRequest();
-
   if (!user) throw new Error("Unauthorized");
-
+  // Sadece adminler paylaşım silebilir
+  if (user.role !== "ADMIN") throw new Error("Unauthorized");
   const post = await prisma.car.findUnique({
     where: { id },
   });
-
   if (!post) throw new Error("Post not found");
-
-  if (post.userId !== user.id) throw new Error("Unauthorized");
-
   const deletedPost = await prisma.car.delete({
     where: { id },
     include: getCarDataInclude(user.id),
   });
-
   return deletedPost;
 }

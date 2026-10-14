@@ -33,7 +33,7 @@ export default function Post({ post }: PostProps) {
   const [title = "", topic = "", ...bodyLines] = Array.isArray(post.content)
     ? post.content
     : [post.content];
-  const isAdmin = user?.id === post.user.id;
+  const isAdmin = user?.role === "ADMIN";
 
   return (
     <article className="group/post space-y-3 rounded-2xl bg-card p-5 shadow-sm">
