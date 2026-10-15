@@ -26,6 +26,7 @@ export interface AdminMenuItem {
 export const adminMenuItems: AdminMenuItem[] = [
   { label: "Genel Bakış", href: "/", icon: Gauge },
   { label: "Anasayfa", href: "/anasayfa", icon: Layout },
+  { label: "Site İçerikleri", href: "/icerik", icon: Newspaper },
   { label: "İşler", href: "/isler", icon: Images },
   { label: "Hizmetler", href: "/hizmetler", icon: ShieldCheck },
   { label: "Hakkında", href: "/hakkinda", icon: FileText },

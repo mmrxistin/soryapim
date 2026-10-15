@@ -29,6 +29,12 @@ const dashboardCards = [
     icon: Layout,
   },
   {
+    title: "Site İçerikleri",
+    description: "Malper yazılarını, sayıları, markaları ve haberleri düzenleyin.",
+    href: "/icerik",
+    icon: Layout,
+  },
+  {
     title: "İşler",
     description: "İş içeriklerini oluşturun, güncelleyin ve yönetim ekranında takip edin.",
     href: "/isler",

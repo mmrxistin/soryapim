@@ -62,7 +62,7 @@ export default function RedFooter() {
           </div>
         </div>
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-xs text-white/40 sm:flex-row">
-          <span>© {new Date().getFullYear()} Red Yapım — El Hamdu Lillah ile yapıldı.</span>
+          <span>© {new Date().getFullYear()} Red Yapım — El Hamdu Lillah teslim sürecinde.</span>
           <span className="font-mono">35.9208° N, 14.5142° E — İstanbul</span>
         </div>
       </div>

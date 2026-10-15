@@ -210,6 +210,19 @@ model du {
 }
 
 // ============================================
+// SITE CONTENT MODEL — Malper içerikleri admin tarafından yönetilir
+// ============================================
+
+model SiteContent {
+  id        String   @id @default(cuid())
+  key       String   @unique
+  data      Json
+  updatedAt DateTime @updatedAt
+
+  @@map("site_content")
+}
+
+// ============================================
 // MEDIA MODEL
 // ============================================
 
@@ -245,7 +258,7 @@ model Media {
   se   se?     @relation(fields: [seId], references: [id])
 
   CarId String?
-  Car   Car?    @relation(fields: [CarId], references: [id])
+  Car   Car?    @relation(fields: [CarId], references: [id], onDelete: Cascade)
 
   dirokId String?
   Dirok   Dirok?  @relation(fields: [dirokId], references: [id])
